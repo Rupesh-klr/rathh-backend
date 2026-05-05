@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import eventDetailsRoutes from './routes/eventDetailsRoutes.js';
 import bookingDetailsRoutes from './routes/bookingDetailsRoutes.js';
+import userDetailsRoutes from './routes/userDetailsRoutes.js';
 
 const app = express();
 
@@ -62,6 +63,8 @@ app.get('/', (req, res) => res.send(`API is running for ${req.clientName}...`));
 app.use('/eventdetails', eventDetailsRoutes);
 // Mount bookingdetails routes for CRUD operations
 app.use('/bookingdetails', bookingDetailsRoutes);
+// Mount userdetails and auth routes
+app.use('/userdetails', userDetailsRoutes);
 
 // Global error handler
 app.use((err, req, res, next) => {

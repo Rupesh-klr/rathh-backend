@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 
-const userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  mobile: { type: String, required: true },
+const bookingUserSchema = new mongoose.Schema({
+  name: { type: String },
+  mobile: { type: String },
   email: { type: String },
   age: { type: String },
   location: { type: String }
@@ -15,7 +15,7 @@ const bookingDetailsSchema = new mongoose.Schema({
   eventName: { type: String, required: true },
   eventDate: { type: String },
   eventLocation: { type: String },
-  users: { type: [userSchema], required: true },
+  users: { type: [bookingUserSchema], required: true },
   status: { type: String, default: 'booked' }
 }, { timestamps: true });
 
