@@ -58,7 +58,9 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => res.send(`API is running for ${req.clientName}...`));
 
+// Mount eventdetails routes for CRUD operations
 app.use('/eventdetails', eventDetailsRoutes);
+// Mount bookingdetails routes for CRUD operations
 app.use('/bookingdetails', bookingDetailsRoutes);
 
 // Global error handler

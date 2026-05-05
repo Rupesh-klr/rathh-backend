@@ -21,6 +21,7 @@ export const getEventDetailsById = async (req, res) => {
 
 export const createEventDetails = async (req, res) => {
   try {
+    console.log('Creating event with data:', req.body);
     const event = new EventDetails(req.body);
     await event.save();
     res.status(201).json(event);
